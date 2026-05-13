@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #111111;
+  --color-accent: #c0a080;
+  --font-sans: 'Inter', 'Roboto', 'sans-serif';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b0b;
+  color: #ffffff;
+  overflow-x: hidden;
+}
