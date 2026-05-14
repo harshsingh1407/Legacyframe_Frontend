@@ -62,11 +62,11 @@ const ContactUs = () => {
           <div className="flex flex-col sm:flex-row lg:flex-col gap-8">
             <div>
               <h5 className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold mb-2">Studio Location</h5>
-              <p className="text-gray-300 text-[13px] md:text-sm tracking-wide">123 Monochrome Avenue<br />Creative District, NY 10001</p>
+              <p className="text-gray-300 text-[13px] md:text-sm tracking-wide">Bhandup West - 400078</p>
             </div>
             <div>
               <h5 className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold mb-2">Contact Details</h5>
-              <p className="text-gray-300 text-[13px] md:text-sm tracking-wide">hello@legacyframe.co<br />+1 (555) 123-4567</p>
+              <p className="text-gray-300 text-[13px] md:text-sm tracking-wide">tejasshigavan05@gmail.com<br />+91 8600008056</p>
             </div>
           </div>
         </motion.div>
