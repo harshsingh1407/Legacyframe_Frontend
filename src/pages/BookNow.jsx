@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 const BookNow = () => {
   const [formData, setFormData] = useState({
@@ -49,7 +51,7 @@ const BookNow = () => {
       const waUrl = `https://wa.me/${ADMIN_WHATSAPP}?text=${waMessage}`;
       window.open(waUrl, '_blank');
 
-      alert('Booking request sent and saved successfully!');
+      toast.success('Booking request sent! Redirecting to WhatsApp...');
       setFormData({
         name: '',
         email: '',
@@ -61,7 +63,7 @@ const BookNow = () => {
       });
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Failed to process booking. Please try again.');
+      toast.error('Failed to process booking. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -74,7 +76,12 @@ const BookNow = () => {
       <div className="flex-1 w-full max-w-[1000px] mx-auto px-6 md:px-10 lg:px-20 py-12 md:py-20 flex flex-col items-center">
         
         {/* Page Header */}
-        <div className="mb-10 md:mb-16 text-center max-w-2xl mx-auto">
+        <motion.div 
+          className="mb-10 md:mb-16 text-center max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <h4 className="text-[#c0a080] text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-4">Reservations</h4>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
             Book Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Session</span>
@@ -82,10 +89,15 @@ const BookNow = () => {
           <p className="text-gray-400 text-[13px] md:text-sm leading-relaxed tracking-wide">
             Fill out the form below to secure your date. After submitting, you will be redirected to WhatsApp to finalize the details with our team.
           </p>
-        </div>
+        </motion.div>
 
         {/* Booking Form */}
-        <div className="w-full bg-[#111111] border border-[#1a1a1a] p-6 sm:p-10 md:p-16 relative overflow-hidden">
+        <motion.div 
+          className="w-full bg-[#111111] border border-[#1a1a1a] p-6 sm:p-10 md:p-16 relative overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-[#141414] rounded-full blur-3xl -z-10 opacity-50 translate-x-1/2 -translate-y-1/2"></div>
           
           <form onSubmit={handleSubmit} className="flex flex-col gap-8 md:gap-10">
@@ -193,7 +205,7 @@ const BookNow = () => {
             </button>
             
           </form>
-        </div>
+        </motion.div>
         
       </div>
     </div>

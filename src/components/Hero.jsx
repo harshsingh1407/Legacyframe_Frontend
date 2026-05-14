@@ -46,7 +46,12 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 h-full">
 
         {/* Left Content */}
-        <div className="w-full md:flex-1 text-center md:text-left z-20 mt-2 md:mt-0">
+        <motion.div 
+          className="w-full md:flex-1 text-center md:text-left z-20 mt-2 md:mt-0"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h1 className="text-[2.2rem] sm:text-5xl lg:text-[3.0rem] xl:text-[4.0rem] font-bold leading-[1.1] tracking-tight mb-4 lg:mb-6 uppercase">
             <span className="block">Photography</span>
             <span className="block">Studio</span>
@@ -57,7 +62,7 @@ const Hero = () => {
           </h2>
 
           <p className="text-gray-400 text-[10px] sm:text-xs lg:text-sm max-w-[280px] sm:max-w-sm lg:max-w-md mb-6 lg:mb-8 leading-relaxed tracking-wide mx-auto md:mx-0">
-            Lorem ipsum dolor sit amet consectetur. Morbi diam urna amet faucibus tortor amet proin. Eget bibendum elit nisi ridiculus massa ridiculus. Posuere semper posuere nam.
+            Professional shoots for weddings, pre-weddings, birthdays, fashion, brands, products, portfolios, and social media content.
           </p>
 
           <button
@@ -67,14 +72,19 @@ const Hero = () => {
           </button>
 
           <div className="flex items-center justify-center md:justify-start gap-8 text-gray-500 font-semibold text-[15px] tracking-wider mb-6 md:mb-0">
-            <a href="#" className="hover:text-white transition-colors duration-300"><FaFacebook /></a>
-            <a href="#" className="hover:text-white transition-colors duration-300"><FaInstagram /></a>
-            <a href="#" className="hover:text-white transition-colors duration-300"><FaTwitter /></a>
+            <a href="https://www.facebook.com/profile.php?id=61589834876640" className="hover:text-white transition-colors duration-300"><FaFacebook /></a>
+            <a href="https://www.instagram.com/legacyframe.co?igsh=MTl1eHFmbHg5eDUxeA%3D%3D" className="hover:text-white transition-colors duration-300"><FaInstagram /></a>
+            <a href="https://x.com/LegacyFrameCo" className="hover:text-white transition-colors duration-300"><FaTwitter /></a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Content - Carousel */}
-        <div className="w-full md:flex-1 relative flex justify-center items-center py-6 md:py-0 overflow-visible z-10">
+        <motion.div 
+          className="w-full md:flex-1 relative flex justify-center items-center py-6 md:py-0 overflow-visible z-10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
 
           {/* Square container that scales circle and image together */}
           <div className="relative w-[85vw] sm:w-[400px] md:w-[90%] lg:w-[80%] max-w-[650px] aspect-square flex justify-center items-end">
@@ -120,7 +130,7 @@ const Hero = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </div>
