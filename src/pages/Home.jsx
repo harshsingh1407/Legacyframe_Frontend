@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import PortfolioSection from '../components/PortfolioSection';
+import VideoSection from '../components/VideoSection';
 import ContactUs from '../components/ContactUs';
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
       {/* Other Sections below */}
       <AboutUs />
       <PortfolioSection />
+      <VideoSection />
       <ContactUs />
     </div>
   );

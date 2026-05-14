@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +27,7 @@ const ContactUs = () => {
       setTimeout(() => setSuccess(false), 5000);
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again.');
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -40,7 +42,13 @@ const ContactUs = () => {
       <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-24">
         
         {/* Left Side: Contact Info */}
-        <div className="flex-1 w-full flex flex-col justify-center">
+        <motion.div 
+          className="flex-1 w-full flex flex-col justify-center"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h4 className="text-[#c0a080] text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-4">Get In Touch</h4>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6 md:mb-8">
             Let's Craft Your <br /> 
@@ -61,10 +69,16 @@ const ContactUs = () => {
               <p className="text-gray-300 text-[13px] md:text-sm tracking-wide">hello@legacyframe.co<br />+1 (555) 123-4567</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Side: Contact Form */}
-        <div className="flex-1 w-full mt-8 lg:mt-0">
+        <motion.div 
+          className="flex-1 w-full mt-8 lg:mt-0"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="bg-[#111111] border border-[#1a1a1a] p-6 sm:p-8 md:p-12">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -129,7 +143,7 @@ const ContactUs = () => {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

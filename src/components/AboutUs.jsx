@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutUs = () => {
   return (
@@ -10,7 +11,13 @@ const AboutUs = () => {
       <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20 flex flex-col md:flex-row items-center gap-12 md:gap-16 lg:gap-24">
         
         {/* Left Side: Image */}
-        <div className="flex-1 w-full relative order-2 md:order-1">
+        <motion.div 
+          className="flex-1 w-full relative order-2 md:order-1"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="relative aspect-[4/5] max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden group">
             <img 
               src="/assets/about_studio.png" 
@@ -23,10 +30,16 @@ const AboutUs = () => {
           {/* Subtle Decorative Elements */}
           <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 lg:-right-16 w-32 h-32 md:w-48 md:h-48 bg-[#141414] rounded-full -z-10"></div>
           <div className="absolute -top-4 -left-4 w-12 h-12 md:w-16 md:h-16 border border-[#2a2a2a] rounded-full -z-10"></div>
-        </div>
+        </motion.div>
 
         {/* Right Side: Text Content */}
-        <div className="flex-1 w-full order-1 md:order-2">
+        <motion.div 
+          className="flex-1 w-full order-1 md:order-2"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h4 className="text-[#c0a080] text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-4">Discover Our Studio</h4>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6 md:mb-8">
             Capturing the <br /> 
@@ -35,26 +48,26 @@ const AboutUs = () => {
           
           <div className="space-y-4 md:space-y-6 text-gray-400 text-[11px] sm:text-sm lg:text-base leading-relaxed tracking-wide max-w-lg">
             <p>
-              For over a decade, we have dedicated ourselves to the art of monochrome photography. We believe that stripping away color reveals the raw, unfiltered truth of a moment, highlighting the textures, contrasts, and emotions that often go unnoticed.
+              We believe every picture should tell a story and preserve memories forever. Our photography studio captures emotions, creativity, and special moments through high-quality photography and cinematic visuals that reflect your style and personality.
             </p>
             <p>
-              Our studio is equipped with state-of-the-art lighting and an environment designed to make you feel at ease, allowing your genuine self to shine through the lens.
+              We offer wedding shoots, portraits, fashion photography, product shoots, event coverage, and cinematic reels — crafted with creativity and perfection to make every moment memorable.
             </p>
           </div>
           
           <div className="mt-8 md:mt-12 flex items-center gap-6 md:gap-8">
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-bold text-white tracking-widest">15+</span>
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-widest">03+</span>
               <span className="text-[8px] md:text-[9px] text-[#c0a080] uppercase tracking-[0.2em] mt-2 font-bold">Years Experience</span>
             </div>
             <div className="h-10 w-[1px] bg-[#2a2a2a]"></div>
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-bold text-white tracking-widest">5k</span>
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-widest">1k</span>
               <span className="text-[8px] md:text-[9px] text-[#c0a080] uppercase tracking-[0.2em] mt-2 font-bold">Portraits Taken</span>
             </div>
           </div>
           
-        </div>
+        </motion.div>
       </div>
     </section>
   );

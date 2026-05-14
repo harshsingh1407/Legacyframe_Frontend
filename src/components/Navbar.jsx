@@ -18,8 +18,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About Us', id: 'about', type: 'scroll' },
-    { name: 'Portfolio', path: '/portfolio', type: 'link' },
-    { name: 'Videos', path: '/videos', type: 'link' },
+    { name: 'Portfolio', id: 'portfolio', type: 'scroll' },
+    { name: 'Videos', id: 'videos', type: 'scroll' },
     { name: 'Contact us', id: 'contact', type: 'scroll' },
   ];
 
