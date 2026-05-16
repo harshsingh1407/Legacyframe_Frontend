@@ -144,7 +144,7 @@ const Portfolio = () => {
                         src={item.imageUrl} 
                         alt={item.title} 
                         loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                        className="w-full h-full object-fill transition-transform duration-1000 ease-out group-hover:scale-110"
                       />
                     </div>
                     

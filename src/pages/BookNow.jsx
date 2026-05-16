@@ -137,7 +137,7 @@ const BookNow = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="bg-transparent border-b border-[#2a2a2a] pb-2 text-white text-sm focus:outline-none focus:border-[#c0a080] transition-colors rounded-none"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+91 000-000-0000"
                   required
                 />
               </div>

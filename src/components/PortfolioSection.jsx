@@ -37,11 +37,11 @@ const PortfolioSection = () => {
     <section id="portfolio" className="relative w-full py-8 md:py-12 lg:py-16 bg-[#0b0b0b] text-white overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-[#c0a080]/5 to-transparent pointer-events-none -z-10"></div>
-      
+
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20">
 
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ const PortfolioSection = () => {
 
         {/* Uniform Premium Grid */}
         {portfolios.length > 0 ? (
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -87,14 +87,14 @@ const PortfolioSection = () => {
               >
                 {/* Image Container */}
                 <div className="w-full h-full">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                    className="w-full h-full object-fill transition-transform duration-1000 ease-out group-hover:scale-110"
                   />
                 </div>
-                
+
                 {/* Premium Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
                   <div className="overflow-hidden mb-1">
