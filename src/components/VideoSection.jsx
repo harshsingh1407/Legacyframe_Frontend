@@ -32,18 +32,17 @@ const VideoSection = () => {
         
         {/* Section Header */}
         <motion.div 
-          className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 mb-12"
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="max-w-2xl text-center md:text-left">
-            <div className="inline-block px-4 py-1 border border-[#c0a080]/30 rounded-full mb-4">
-              <span className="text-[#c0a080] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em]">Cinematography</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Cinematic <span className="text-[#c0a080] italic">Stories</span>
+          <div className="relative">
+            <span className="absolute -left-4 top-0 w-1 h-full bg-[#c0a080]"></span>
+            <h4 className="text-[#c0a080] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-4 pl-4">Cinematography</h4>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1] tracking-tight pl-4">
+              Cinematic <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/40 italic">Stories</span>
             </h2>
           </div>
           <Link
