@@ -478,7 +478,7 @@ const Admin = () => {
                     <div key={item._id} className="group relative aspect-video bg-[#0b0b0b] border border-[#1a1a1a] rounded overflow-hidden">
                       <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
 
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
+                      <div className="absolute inset-0 bg-black/60 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
                         <div className="flex justify-between items-end">
                           <div>
                             <h4 className="font-bold text-sm">{item.title}</h4>
@@ -573,12 +573,12 @@ const Admin = () => {
                       
                       {/* Play Button Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                        <div className="w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 opacity-100 md:opacity-0 md:group-hover:opacity-100">
                           <Play size={18} className="text-[#c0a080] fill-[#c0a080]" />
                         </div>
                       </div>
 
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                      <div className="absolute inset-0 bg-black/60 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                         <div className="flex justify-between items-end">
                           <div>
                             <h4 className="font-bold text-sm">{video.title}</h4>
