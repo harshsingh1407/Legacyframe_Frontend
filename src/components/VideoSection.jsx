@@ -32,18 +32,17 @@ const VideoSection = () => {
         
         {/* Section Header */}
         <motion.div 
-          className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12"
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="max-w-2xl">
-            <div className="inline-block px-4 py-1 border border-[#c0a080]/30 rounded-full mb-4">
-              <span className="text-[#c0a080] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em]">Cinematography</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Cinematic <span className="text-[#c0a080] italic">Stories</span>
+          <div className="relative">
+            <span className="absolute -left-4 top-0 w-1 h-full bg-[#c0a080]"></span>
+            <h4 className="text-[#c0a080] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-4 pl-4">Cinematography</h4>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1] tracking-tight pl-4">
+              Cinematic <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/40 italic">Stories</span>
             </h2>
           </div>
           <Link
@@ -90,18 +89,18 @@ const VideoSection = () => {
                 />
                 
                 {/* Overlay UI */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-                    <Play size={24} className="text-[#c0a080] fill-[#c0a080]" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+                    <Play className="w-5 h-5 md:w-6 md:h-6 text-[#c0a080] fill-[#c0a080]" />
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
-                    <div className="flex items-center gap-4 text-[9px] uppercase tracking-widest text-[#c0a080] font-bold mb-2">
-                        <span className="flex items-center gap-1.5"><Tag size={10} /> {video.category}</span>
-                        <span className="flex items-center gap-1.5"><Calendar size={10} /> {new Date(video.createdAt).getFullYear()}</span>
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
+                    <div className="flex items-center gap-3 md:gap-4 text-[8px] md:text-[9px] uppercase tracking-widest text-[#c0a080] font-bold mb-1.5 md:mb-2">
+                        <span className="flex items-center gap-1 md:gap-1.5"><Tag size={10} className="w-2.5 h-2.5 md:w-auto md:h-auto" /> {video.category}</span>
+                        <span className="flex items-center gap-1 md:gap-1.5"><Calendar size={10} className="w-2.5 h-2.5 md:w-auto md:h-auto" /> {new Date(video.createdAt).getFullYear()}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#c0a080] transition-colors">{video.title}</h3>
+                    <h3 className="text-base md:text-lg font-bold text-white group-hover:text-[#c0a080] transition-colors line-clamp-1">{video.title}</h3>
                 </div>
               </div>
             </motion.div>
